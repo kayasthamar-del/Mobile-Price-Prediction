@@ -26,11 +26,14 @@ if st.button("Predict Price"):
     input_data = np.array([[ram, storage, battery, camera]])
     prediction = model.predict(input_data)
 
-    if prediction[0] == 0:
-        st.success("💰 Low Price Mobile")
-    elif prediction[0] == 1:
-        st.success("💰 Medium Price Mobile")
-    elif prediction[0] == 2:
-        st.success("💰 High Price Mobile")
-    else:
-        st.success("💎 Premium Mobile")
+    if predicted_price < 15000:
+    range_label = "Low"
+elif predicted_price < 25000:
+    range_label = "Medium"
+elif predicted_price < 40000:
+    range_label = "High"
+else:
+    range_label = "Premium"
+
+
+
