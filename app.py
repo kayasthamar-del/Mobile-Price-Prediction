@@ -29,7 +29,7 @@ if st.button("Predict Price"):
         range_label = "Low"
     elif predicted_price < 30000:
         range_label = "Medium"
- elif predicted_price < 40000:
+    elif predicted_price < 40000:
         range_label = "High"
     else:
         range_label = "Premium"
