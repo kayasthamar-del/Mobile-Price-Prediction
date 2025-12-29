@@ -12,4 +12,4 @@ battery = st.number_input("Battery (mAh)", 2000, 6000)
 camera = st.number_input("Camera (MP)", 5, 108)
 
 if st.button("Predict Price"):
-    st.write("Prediction will appear here")
+    st.write("Price prediction logic will be added here")
