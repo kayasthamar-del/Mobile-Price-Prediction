@@ -27,7 +27,7 @@ if st.button("Predict Price"):
     prediction = model.predict(input_data)
 
     if predicted_price < 15000:
-    range_label = "Low"
+       range_label = "Low"
 elif predicted_price < 25000:
     range_label = "Medium"
 elif predicted_price < 40000:
