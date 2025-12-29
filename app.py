@@ -26,16 +26,20 @@ if st.button("Predict Price"):
     predicted_price = model.predict(input_data)[0]
 
     if predicted_price < 15000:
-        range_label = "Low"
-    elif predicted_price < 30000:
-        range_label = "Medium"
+          range_label = "Low"
+    elif predicted_price < 25000:
+          range_label = "Medium"
     elif predicted_price < 40000:
-        range_label = "High"
+          range_label = "High"
     else:
-        range_label = "Premium"
+          range_label = "Premium"
 
-    st.write("Predicted Price:", predicted_price)
-    st.write("Price Range:", range_label)
+
+st.success(
+    f"Predicted Price: ₹{int(predicted_price)}\n"
+    f"Price Category: {range_label}"
+)
+
 
 
 
