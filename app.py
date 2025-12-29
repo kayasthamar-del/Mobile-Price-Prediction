@@ -23,17 +23,19 @@ battery = st.number_input("Battery (mAh)", 2000, 6000)
 camera = st.number_input("Camera (MP)", 5, 108)
 
 if st.button("Predict Price"):
-    input_data = np.array([[ram, storage, battery, camera]])
-    prediction = model.predict(input_data)
+    predicted_price = model.predict(input_data)[0]
 
     if predicted_price < 15000:
-              range_label = "Low"
-elif predicted_price < 25000:
-    range_label = "Medium"
-elif predicted_price < 40000:
-    range_label = "High"
-else:
-    range_label = "Premium"
+        range_label = "Low"
+    elif predicted_price < 30000:
+        range_label = "Medium"
+ elif predicted_price < 40000:
+        range_label = "High"
+    else:
+        range_label = "Premium"
+
+    st.write("Predicted Price:", predicted_price)
+    st.write("Price Range:", range_label)
 
 
 
